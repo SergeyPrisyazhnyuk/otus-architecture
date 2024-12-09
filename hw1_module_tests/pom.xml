@@ -3,10 +3,17 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
   <artifactId>hw1_module_tests</artifactId>
-  <packaging>war</packaging>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>hw1_module_tests Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <parent>
+    <artifactId>otus-architecture</artifactId>
+    <groupId>ru.otus</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -21,7 +28,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <build>
-    <finalName>hw1_module_tests</finalName>
-  </build>
 </project>
