@@ -16,6 +16,7 @@
   
     <modules>
         <module>hw1_module_tests</module>
+        <module>hw_starship_battle</module>
     </modules>
   
       <properties>
@@ -32,8 +33,19 @@
                 <artifactId>junit-jupiter</artifactId>
                 <version>${junit-jupiter.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.34</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>3.9.0</version>
+            </dependency>
         </dependencies>
-    </dependencyManagement>	
+    </dependencyManagement>
 
     <build>
         <plugins>
@@ -43,7 +55,7 @@
                 <version>3.0.0-M7</version>
             </plugin>
         </plugins>
-        <testSourceDirectory>src/main/test/java/ru/otus/moduletests</testSourceDirectory>
+
     </build>
 	
 </project>
