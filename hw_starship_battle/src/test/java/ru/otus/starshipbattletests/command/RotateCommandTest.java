@@ -1,4 +1,4 @@
-package ru.otus.starshipbattletests;
+package ru.otus.starshipbattletests.command;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
