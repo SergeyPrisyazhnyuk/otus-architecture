@@ -1,6 +1,12 @@
-ru\otus\starshipbattle\command\Command.class
 ru\otus\starshipbattle\model\impl\Vector.class
 ru\otus\starshipbattle\command\impl\RotateCommand.class
 ru\otus\starshipbattle\model\Movable.class
 ru\otus\starshipbattle\model\Rotable.class
-ru\otus\starshipbattle\command\impl\MoveCommand.class
+ru\otus\starshipbattle\exception\RetryCommandTwoTimesExceededException.class
+ru\otus\starshipbattle\command\impl\RetryCommand.class
+ru\otus\starshipbattle\exception\handler\CommandExceptionHandler.class
+ru\otus\starshipbattle\command\Command.class
+ru\otus\starshipbattle\exception\handler\impl\CommandExceptionLogHandler.class
+ru\otus\starshipbattle\exception\handler\impl\RetryBeforeLogExceptionHandler.class
+ru\otus\starshipbattle\exception\handler\impl\RetryCommandTwoTimesCommandHandler.class
+ru\otus\starshipbattle\exception\handler\impl\RetryCommandHandler.class
