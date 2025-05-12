@@ -5,7 +5,7 @@ import static org.mockito.Mockito.mock;
 
 import org.junit.jupiter.api.Test;
 import ru.otus.starshipbattle.command.Command;
-import ru.otus.starshipbattle.command.impl.CommandExceptionLog;
+import ru.otus.starshipbattle.command.impl.ExceptionLogCommand;
 import ru.otus.starshipbattle.command.impl.RetryCommand;
 import ru.otus.starshipbattle.exception.handler.impl.RetryBeforeLogExceptionHandler;
 
@@ -34,7 +34,7 @@ public class RetryBeforeLogExceptionHandlerTest {
         new RetryBeforeLogExceptionHandler(commandList).handle(new RuntimeException("RetryBeforeLogExceptionHandlerTest"),
                 command).execute();
 
-        assertEquals(CommandExceptionLog.class, commandList.get(2).getClass());
+        assertEquals(ExceptionLogCommand.class, commandList.get(2).getClass());
     }
 
 }

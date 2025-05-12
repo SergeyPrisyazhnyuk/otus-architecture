@@ -4,14 +4,14 @@ import lombok.extern.slf4j.Slf4j;
 import ru.otus.starshipbattle.command.Command;
 
 @Slf4j
-public class CommandExceptionLog implements Command {
+public class ExceptionLogCommand implements Command {
     /**
     * 4 Реализовать Команду, которая записывает информацию о выброшенном исключении в лог
     **/
 
     private final Exception exception;
 
-    public CommandExceptionLog(Exception exception) {
+    public ExceptionLogCommand(Exception exception) {
         this.exception = exception;
     }
 
