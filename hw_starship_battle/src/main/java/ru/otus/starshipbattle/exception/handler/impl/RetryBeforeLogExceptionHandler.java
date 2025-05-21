@@ -1,7 +1,7 @@
 package ru.otus.starshipbattle.exception.handler.impl;
 
 import ru.otus.starshipbattle.command.Command;
-import ru.otus.starshipbattle.command.impl.CommandExceptionLog;
+import ru.otus.starshipbattle.command.impl.ExceptionLogCommand;
 import ru.otus.starshipbattle.command.impl.RetryCommand;
 import ru.otus.starshipbattle.exception.handler.CommandExceptionHandler;
 
@@ -26,7 +26,7 @@ public class RetryBeforeLogExceptionHandler implements CommandExceptionHandler {
         if (commandCollection.isEmpty()) {
             return () -> commandCollection.add(new RetryCommand(c));
         } else {
-            return () -> commandCollection.add(new CommandExceptionLog(e));
+            return () -> commandCollection.add(new ExceptionLogCommand(e));
         }
     }
 }

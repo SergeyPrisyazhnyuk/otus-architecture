@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import ru.otus.starshipbattle.command.Command;
-import ru.otus.starshipbattle.command.impl.CommandExceptionLog;
+import ru.otus.starshipbattle.command.impl.ExceptionLogCommand;
 import ru.otus.starshipbattle.exception.handler.impl.CommandExceptionLogHandler;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class CommandExceptionLogHandlerTest {
         new CommandExceptionLogHandler(commandList).handle(new RuntimeException("CommandExceptionLogHandlerTest"), null).execute();
 
         assertEquals(1, commandList.size());
-        assertEquals(CommandExceptionLog.class, commandList.get(0).getClass());
+        assertEquals(ExceptionLogCommand.class, commandList.get(0).getClass());
     }
 
 }

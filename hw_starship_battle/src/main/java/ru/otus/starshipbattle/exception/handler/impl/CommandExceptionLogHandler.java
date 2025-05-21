@@ -1,7 +1,7 @@
 package ru.otus.starshipbattle.exception.handler.impl;
 
 import ru.otus.starshipbattle.command.Command;
-import ru.otus.starshipbattle.command.impl.CommandExceptionLog;
+import ru.otus.starshipbattle.command.impl.ExceptionLogCommand;
 import ru.otus.starshipbattle.exception.handler.CommandExceptionHandler;
 
 import java.util.Collection;
@@ -19,6 +19,6 @@ public class CommandExceptionLogHandler implements CommandExceptionHandler {
 
     @Override
     public Command handle(Exception e, Command c) {
-        return () -> commandCollection.add(new CommandExceptionLog(e));
+        return () -> commandCollection.add(new ExceptionLogCommand(e));
     }
 }
