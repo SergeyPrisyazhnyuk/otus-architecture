@@ -6,4 +6,5 @@ public interface Movable {
     Vector getPosition();
     void setPosition(Vector newVector);
     Vector getVelocity();
+    void finish() throws Exception;
 }
