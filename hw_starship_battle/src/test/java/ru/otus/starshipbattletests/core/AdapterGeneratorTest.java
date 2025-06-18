@@ -16,6 +16,7 @@ import ru.otus.starshipbattle.model.Movable;
 import ru.otus.starshipbattle.model.impl.Vector;
 import ru.otus.starshipbattle.scopes.InitCommand;
 
+import java.util.Map;
 import java.util.function.Function;
 
 import static org.mockito.Mockito.*;
@@ -25,17 +26,20 @@ public class AdapterGeneratorTest {
     @Mock
     private UObject uObject;
 
+
     @SneakyThrows
     @BeforeEach
-    void initialize() {
+    void setup() {
         new InitCommand().execute();
-        var iocScope = IoC.resolve("IoC.Scope.Create");
-        ((Command) IoC.resolve("IoC.Scope.Current.Set", iocScope)).execute();
+        Map<String, Function<Object[], Object>> scope = IoC.resolve("IoC.Scope.Create");
+        Command command = IoC.resolve("IoC.Scope.Current.Set", scope);
+        command.execute();
 
         SourceCodeGenerator sourceCodeGenerator = new SourceCodeGenerator();
         sourceCodeGenerator.generateAdapterClassFromInterface(Movable.class);
     }
 
+    @SneakyThrows
     @AfterEach
     void clear() {
         Command command = IoC.resolve("IoC.Scope.Current.Clear");
@@ -45,6 +49,7 @@ public class AdapterGeneratorTest {
     @SneakyThrows
     @Test
     void GenerateAdapterFinishTest() {
+
         ((Command) IoC.resolve("IoC.Register", "finish", (Function<Object[], Object>) (Object[] args) ->
                 new FinishCommand(uObject))).execute();
 
