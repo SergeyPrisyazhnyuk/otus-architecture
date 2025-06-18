@@ -4,6 +4,7 @@ import lombok.SneakyThrows;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -22,6 +23,7 @@ import java.util.function.Function;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AdapterGeneratorTest {
     @Mock
     private UObject uObject;
@@ -29,7 +31,7 @@ public class AdapterGeneratorTest {
 
     @SneakyThrows
     @BeforeEach
-    void setup() {
+    void initialize() {
         new InitCommand().execute();
         Map<String, Function<Object[], Object>> scope = IoC.resolve("IoC.Scope.Create");
         Command command = IoC.resolve("IoC.Scope.Current.Set", scope);
