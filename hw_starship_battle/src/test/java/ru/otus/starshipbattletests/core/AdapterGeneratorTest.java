@@ -1,6 +1,7 @@
 package ru.otus.starshipbattletests.core;
 
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,20 +23,25 @@ import java.util.function.Function;
 
 import static org.mockito.Mockito.*;
 
+@Slf4j
 @ExtendWith(MockitoExtension.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AdapterGeneratorTest {
     @Mock
     private UObject uObject;
 
-
     @SneakyThrows
     @BeforeEach
     void initialize() {
-        new InitCommand().execute();
-        Map<String, Function<Object[], Object>> scope = IoC.resolve("IoC.Scope.Create");
-        Command command = IoC.resolve("IoC.Scope.Current.Set", scope);
-        command.execute();
+
+        try {
+            new InitCommand().execute();
+            Map<String, Function<Object[], Object>> scope = IoC.resolve("IoC.Scope.Create");
+            Command command = IoC.resolve("IoC.Scope.Current.Set", scope);
+            command.execute();
+        } catch (RuntimeException e) {
+            log.info("Scope already exists");
+        }
 
         SourceCodeGenerator sourceCodeGenerator = new SourceCodeGenerator();
         sourceCodeGenerator.generateAdapterClassFromInterface(Movable.class);
