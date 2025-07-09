@@ -25,7 +25,6 @@ import ru.otus.starshipbattle.scopes.InitCommand;
 
 import java.lang.reflect.Type;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
