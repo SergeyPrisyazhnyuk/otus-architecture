@@ -14,6 +14,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>ru.otus</groupId>
+            <artifactId>hw_game_auth</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
