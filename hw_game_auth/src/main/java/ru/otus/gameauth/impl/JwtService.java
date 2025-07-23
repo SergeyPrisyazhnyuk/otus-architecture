@@ -32,7 +32,6 @@ public class JwtService implements JwtCreator, GameAuthorizerService {
                 .withClaim("gameId", gameId)
                 .withClaim("roles", gameAuthorizationService.getGamersRoles(gamerId, gameId))
                 .withIssuedAt(new Date())
-//                .withExpiresAt(new Date(System.currentTimeMillis() + 5000L))
                 .withJWTId(UUID.randomUUID().toString())
                 .withNotBefore(new Date(System.currentTimeMillis() + 1000L))
                 .sign(ALGORITHM);

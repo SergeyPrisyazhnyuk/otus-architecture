@@ -32,6 +32,7 @@ public class JwtServiceTest {
                         .id(UUID.randomUUID().toString())
                         .gamers(List.of("testGamer"))
                         .build());
+//        System.out.println("KEYS!!! " + jwtService.create("testGamer", "testGame"));
         assertTrue(StringUtils.isNotBlank(jwtService.create("testGamer", "testGame")));
     }
 }

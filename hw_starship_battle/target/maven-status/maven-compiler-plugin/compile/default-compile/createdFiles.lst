@@ -31,6 +31,7 @@ ru\otus\starshipbattle\command\impl\MacroCommand.class
 ru\otus\starshipbattle\command\impl\CheckFuelCommand.class
 ru\otus\starshipbattle\command\impl\UObject.class
 ru\otus\starshipbattle\command\impl\MoveCommand.class
+ru\otus\starshipbattle\exception\AuthException.class
 ru\otus\starshipbattle\scopes\SetCurrentScopeCommand.class
 ru\otus\starshipbattle\command\impl\InterpretCommand.class
 ru\otus\starshipbattle\model\ConsumeFuel.class

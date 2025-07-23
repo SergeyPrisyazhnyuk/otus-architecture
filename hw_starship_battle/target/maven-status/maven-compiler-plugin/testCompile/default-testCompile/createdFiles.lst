@@ -4,6 +4,7 @@ ru\otus\starshipbattletests\command\RetryTwoTimesCommandTest.class
 ru\otus\starshipbattletests\endpoint\EndPointTest.class
 ru\otus\starshipbattletests\core\IoCTest.class
 ru\otus\starshipbattletests\command\HardStopCommandTest.class
+ru\otus\starshipbattletests\endpoint\AuthTestConfig.class
 ru\otus\starshipbattletests\handler\RetryCommandHandlerTest.class
 ru\otus\starshipbattletests\command\CheckFuelCommandTest.class
 ru\otus\starshipbattletests\command\RotateCommandTest.class
