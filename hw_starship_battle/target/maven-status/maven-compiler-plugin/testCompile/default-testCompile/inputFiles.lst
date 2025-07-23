@@ -7,6 +7,7 @@ C:\Учеба\Otus\Архитектура\otus-architecture\hw_starship_battle\s
 C:\Учеба\Otus\Архитектура\otus-architecture\hw_starship_battle\src\test\java\ru\otus\starshipbattletests\command\RetryTwoTimesCommandTest.java
 C:\Учеба\Otus\Архитектура\otus-architecture\hw_starship_battle\src\test\java\ru\otus\starshipbattletests\command\RotateCommandTest.java
 C:\Учеба\Otus\Архитектура\otus-architecture\hw_starship_battle\src\test\java\ru\otus\starshipbattletests\command\StartCommandTest.java
+C:\Учеба\Otus\Архитектура\otus-architecture\hw_starship_battle\src\test\java\ru\otus\starshipbattletests\endpoint\EndPointTest.java
 C:\Учеба\Otus\Архитектура\otus-architecture\hw_starship_battle\src\test\java\ru\otus\starshipbattletests\command\CheckFuelCommandTest.java
 C:\Учеба\Otus\Архитектура\otus-architecture\hw_starship_battle\src\test\java\ru\otus\starshipbattletests\handler\CommandExceptionLogHandlerTest.java
 C:\Учеба\Otus\Архитектура\otus-architecture\hw_starship_battle\src\test\java\ru\otus\starshipbattletests\command\BurnFuelCommandTest.java
