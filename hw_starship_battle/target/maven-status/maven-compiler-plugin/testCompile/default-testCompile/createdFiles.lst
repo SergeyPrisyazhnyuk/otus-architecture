@@ -1,8 +1,10 @@
 ru\otus\starshipbattletests\core\AdapterGeneratorTest.class
 ru\otus\starshipbattletests\command\ChangeVelocityCommandTest.class
 ru\otus\starshipbattletests\command\RetryTwoTimesCommandTest.class
+ru\otus\starshipbattletests\endpoint\EndPointTest.class
 ru\otus\starshipbattletests\core\IoCTest.class
 ru\otus\starshipbattletests\command\HardStopCommandTest.class
+ru\otus\starshipbattletests\endpoint\AuthTestConfig.class
 ru\otus\starshipbattletests\handler\RetryCommandHandlerTest.class
 ru\otus\starshipbattletests\command\CheckFuelCommandTest.class
 ru\otus\starshipbattletests\command\RotateCommandTest.class
@@ -13,7 +15,9 @@ ru\otus\starshipbattletests\command\CommandLogExceptionTest.class
 ru\otus\starshipbattletests\command\RetryCommandTest.class
 ru\otus\starshipbattletests\core\IoCExceptionTest.class
 ru\otus\starshipbattletests\command\BurnFuelCommandTest.class
+ru\otus\starshipbattletests\endpoint\EndPointTest$2.class
 ru\otus\starshipbattletests\command\MacroCommandTest.class
 ru\otus\starshipbattletests\handler\RetryBeforeLogExceptionHandlerTest.class
+ru\otus\starshipbattletests\endpoint\EndPointTest$1.class
 ru\otus\starshipbattletests\command\SoftStopCommandTest.class
 ru\otus\starshipbattletests\command\StartCommandTest.class

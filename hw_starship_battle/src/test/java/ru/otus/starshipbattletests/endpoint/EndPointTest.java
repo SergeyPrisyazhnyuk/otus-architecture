@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.context.annotation.Import;
 import org.springframework.messaging.converter.MappingJackson2MessageConverter;
 import org.springframework.messaging.simp.stomp.StompFrameHandler;
 import org.springframework.messaging.simp.stomp.StompHeaders;
@@ -34,13 +35,15 @@ import java.util.function.Function;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.awaitility.Awaitility.await;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.mock;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT,
         classes = StarShipBattleApplication.class)
 @Slf4j
+@Import(AuthTestConfig.class)
 class EndPointTest {
     @LocalServerPort
     private int port;
@@ -110,10 +113,17 @@ class EndPointTest {
 
         StompHeaders headers = new StompHeaders();
         headers.add(StompHeaders.DESTINATION, "/game/action");
+        headers.add(AUTHORIZATION,
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
+                        ".eyJpc3MiOiJBdXRob3JpemF0aW9uIG1vZHVsZSIsInN1YiI6IkdhbWVyIGRldGFpbHMiLCJnYW1lcklkIjoidGVzdEdhbWVyIiwiZ2FtZUlkIjoidGVzdEdhbWUiLCJyb2xlcyI6WyJHQU1FUiJdLCJpYXQiOjE3NTMyODk0NDEsImp0aSI6IjhjMDgzZGNmLWI0MTYtNDBhZi1hMmYyLTJhZDMwNTUzZGVhMyIsIm5iZiI6MTc1MzI4OTQ0Mn0" +
+                        ".QJESm5fdO7nZD_V4NULXDyPTB2lS_Av9NiJBaXi3v1o"
+        );
+
+        session.send(headers, agentMessage);
 
         await()
                 .atMost(1, SECONDS)
-                .untilAsserted(() -> assertTrue(answerQueue.isEmpty()));
+                .untilAsserted(() -> assertFalse(answerQueue.isEmpty()));
     }
 }
 

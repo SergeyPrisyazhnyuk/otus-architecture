@@ -1,0 +1,8 @@
+ru\otus\gameauth\impl\GameManager.class
+ru\otus\gameauth\service\GameAuthorizerService.class
+ru\otus\gameauth\model\Game.class
+ru\otus\gameauth\impl\JwtService.class
+ru\otus\gameauth\model\Game$GameBuilder.class
+ru\otus\gameauth\service\JwtCreator.class
+ru\otus\gameauth\service\GameAuthorizationService.class
+ru\otus\gameauth\repository\GameRepository.class
