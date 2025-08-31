@@ -3,9 +3,7 @@ package ru.otus.starshipbattletests.interpreter.command;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import ru.otus.starshipbattle.command.impl.UObject;
 import ru.otus.starshipbattle.interpreter.exception.InterpretException;
@@ -30,8 +28,7 @@ class CommandInterpreterTest {
     }
 
     @AfterEach
-
-    void tearDown() {
+    void cleanUp() {
         interpreter = null;
     }
 
